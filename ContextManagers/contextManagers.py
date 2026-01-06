@@ -31,6 +31,6 @@ class FileManager:
             # Handle exceptions occurring inside the block
             print(f"An exception occurred: {exc_type.__name__}: {exc_value}")
 
-with FileManager("jdjd.txt", 'r') as f:
+with FileManager(file_path, 'r') as f:
     f.read()
     print("Reading file content...")
