@@ -13,14 +13,24 @@ class FileManager:
         self.file = None
         
     def __enter__(self):
-        self.file = open(self.filename, self.mode)
-        print("Entering the context")
-        return self.file
+        try:
+            self.file = open(self.filename, self.mode)
+            print("Entering the context")
+            return self.file
+        except FileNotFoundError:
+            print(f"Error: The file '{self.filename}' was not found.")
+        except IOError as e:
+            print(f"Error opening file '{self.filename}': {e}")
     
     def __exit__(self, exc_type, exc_value, exc_traceback):
+        if self.file:
+            self.file.close()
         print("Exiting the context")
-        self.file.close()
+        
+        if exc_type:
+            # Handle exceptions occurring inside the block
+            print(f"An exception occurred: {exc_type.__name__}: {exc_value}")
 
-with FileManager(file_path, 'r') as f:
+with FileManager("jdjd.txt", 'r') as f:
     f.read()
     print("Reading file content...")
