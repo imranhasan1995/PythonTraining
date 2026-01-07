@@ -1,0 +1,8 @@
+my_project/
+├── main.py
+└── my_package/
+    ├── __init__.py      # Marks 'my_package' as a package
+    ├── module_a.py
+    └── sub_package/
+        ├── __init__.py  # Marks 'sub_package' as a subpackage
+        └── module_b.py
