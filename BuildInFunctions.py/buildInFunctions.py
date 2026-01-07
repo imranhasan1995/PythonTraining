@@ -41,7 +41,7 @@ total = sum(x)
 print("x: ", x, "sum(x): ", total)
 
 # min() and max() function
-# Creating a list
+# Creating a list 
 List = [74, 587, 24, 92, 4, 2, 7, 46]
 res = max(List)
 print("The largest number in the list is: ", res)

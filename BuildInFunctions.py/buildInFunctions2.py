@@ -19,5 +19,5 @@ for i in range(len(info)):
     print("New Value:",getattr(emp, info[i]))
     print(f"property {info[i]} status:{hasattr(emp, info[i])}")
 
-### print() function
+### print() function 
 print("TutorialsPoint", "is", "located", "in", "India.", sep="-")
